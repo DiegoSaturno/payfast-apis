@@ -1,0 +1,14 @@
+{
+    "pagamento" : {
+        "forma_de_pagamento" : "cartao",
+        "valor" : "25.90",
+        "moeda" : "USD",
+        "descricao" : "Teste para pagamento"
+    }, "cartao" : {
+        "numero" : "3312839645129901",
+        "bandeira" : "Visa",
+        "ano_de_expiracao" : "2023",
+        "mes_de_expiracao" : "09",
+        "cvv" : "735"
+    }
+}

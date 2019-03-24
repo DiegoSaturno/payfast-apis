@@ -1,0 +1,7 @@
+*.swp
+*.jpg
+*.sw[a-z]
+files/uplodead/*
+logs/*
+node_modules/
+package-lock.json

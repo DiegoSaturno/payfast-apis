@@ -1,0 +1,107 @@
+Node = Ambiente de execução para rodar js em backend
+
+Aula 1
+
+Inicialização e configuração dos módulos
+
+Configurar o index.js
+	O mesmo deve somente requerir os arquivos de configuração de rota e executar a aplicação.
+	Isolar os arquivos de carregamento de bibliotecas
+
+Separar os arquivos de carregamento de biblioteca em uma pasta
+	Separar os arquivos de configuração e suas bibliotecas relativas em arquivos separados.
+	Separar numa pasta config, por exemplo.
+
+Cada funcionalidade da API deve ser configurada em uma rota. As rotas serão definidas nas controllers
+	A variável app no controlador pagamentos está instanciada no arquivo de configuração do express, e o mesmo sabe onde ela se encontra instanciada, e sabe que esta função espera como parâmetro a variável.
+
+A biblioteca consign informa ao express onde procurar os arquivos dos controladores.
+
+
+Passo a passo:
+	Instalar o express via npm
+	Iniciar o express dentro do arquivo index.js
+	Criar a rota de teste que recebe um request
+	Criar a pasta controllers e um controlador
+	Criar a rota relacionada a este controlador
+	Iniciar o consign fazendo com que ele carregue os arquivos de todos os controladores para de ntro do express
+	Alterar o index.js para carregar o express através do arquivo de configuração criado pra ele
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Aula 2
+curl http://localhost:3000/pagamentos/pagamento -X POST -v -H "Content-type: application/json" -v -H "Content-type:application/json" -d '{ inserir json aqui }' -> manda um request via post para o servidor.
+... -d @pasta/arquivo.json
+
+
+
+Biblioteca body-parser
+	Faz o parse do corpo da requisição recebida.
+
+
+Prototype
+	Evita que diferentes instancias/threads compartilhem o mesmo método
+
+express-validator
+	Biblioteca que faz validações das requisições junto ao express. Torna possível que os asserts sejam invocados.
+
+Status code
+	200 - OK
+	201 - Created
+
+	Família do 400 - Erro da entrada de dados
+	400 - Bad request
+	403 - Not allowed
+	405 - Forbidden
+	404 - Not found
+
+	Família do 500 - Erro no servidor
+	500 - Erro interno do servidor
+
+	Família do 300 - Redirecionamento
+	301
+	302
+
+
+	100 - Conexão continuada
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Aula 3
+
+curl http://localhost:3000/pagamentos/pagamento/9 -X PUT -v | json_pp -> método put para confirmar o pagamento.
+
+curl ... -X DELETE -v -> cancelar o pagamento
+
+verbo http (post, get, delete, put) + recurso (caminho) = Arquitetura REST
+get - retornar uma representação
+post, put - cria ou altera o recurso
+	put - realiza operações idempotentes (resultado vai ser o mesmo)
+	post - os resultados serão diferentes
+
+delete - remove (não necessariamente fisicamente) o recurso
+
+HATEOAS - Hypermedia as the engine of application state: Definição do fluxo de serviços da aplicação
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Aula 4
+
+Utilizar streams pra ler arquivos: le o arquivo em partes e escreve em partes. Melhor para escalar a aplicação
+
+curl -X POST http://localhost:3000/upload/imagem --data-binary @files/xayah.jpg -H "Content-type: application/octet-stream"
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+Aula 5 - Cacheamento
+
+
+Memcached -> framework para cacheamento de dados
+
+Instalar via apt-get e a lib via npm
+
+Parametros (json):
+
+retries - número de tentativas máximas para achar o dado em cache
+retry - tempo para reconexão em um dos clusters. Se passar este tempo, ele tenta de novo
+remove - Autoriza o cluster principal a remover algum nó que não esteja funcionando no cluster

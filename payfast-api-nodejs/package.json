@@ -1,0 +1,33 @@
+{
+  "name": "payfast-api-nodejs",
+  "version": "1.0.0",
+  "description": "Repositório para aprendizado e testes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "aprendizado",
+    "testes",
+    "api",
+    "restful"
+  ],
+  "author": "Diego Setúbal de Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cluster": "^0.7.7",
+    "consign": "^0.1.6",
+    "express": "^4.16.3",
+    "express-validator": "^3.2.1",
+    "memcached": "^2.2.2",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "os": "^0.1.1",
+    "restify": "^5.2.1",
+    "restify-clients": "^1.5.2",
+    "restify-plugins": "^1.6.0",
+    "soap": "^0.19.2",
+    "winston": "^2.4.1"
+  }
+}
